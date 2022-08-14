@@ -3,18 +3,18 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or ''
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
 
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'storagegauthamr1cd1756'
     BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'FchtJnrovCeD8Ks5Y9BVCAZ6z3AzBhQHoyog0ZUK2iwbNl4kfER55uXgcQXgxIpQAE0Z0qX06qnR+AStix2Msg=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get('SQL_SERVER') or 'sqlserver-gauthamr1-cd1756.database.windows.net'
-    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'db_gauthamr1_cd1756'
+    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'db-gauthamr1-cd1756'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'gauthamr1'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'G@uth@m123'
     # Below URI may need some adjustments for driver version, based on your OS, if running locally
-    SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + SQL_DATABASE  + '?driver=ODBC+Driver+17+for+SQL+Server'
+    SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + SQL_DATABASE + '?driver=ODBC+Driver+17+for+SQL+Server'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     ### Info for MS Authentication ###
